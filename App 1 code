@@ -1,0 +1,104 @@
+//Roan Barreras and Nathaniel Ong
+onEvent("FRESHFADE", "click", function( ) {
+	console.log("FRESHFADE clicked!");
+	setScreen("Freshcut");
+	playSound("Pop-Bubble-SFX.mp3");
+});
+onEvent("SALTY", "click", function( ) {
+	console.log("SALTY clicked!");
+	setScreen("Salty");
+	playSound("Pop-Bubble-SFX.mp3");
+});
+onEvent("ReturnHome_2", "click", function( ) {
+	console.log("ReturnHome_2 clicked!");
+	setScreen("Fish_App_Home");
+});
+onEvent("ReturnHome_1", "click", function( ) {
+	console.log("ReturnHome_1 clicked!");
+	setScreen("Fish_App_Home");
+});
+onEvent("button5", "click", function( ) {
+	console.log("button5 clicked!");
+	setScreen("Freshcut");
+});
+onEvent("button6", "click", function( ) {
+	console.log("button6 clicked!");
+	setScreen("Freshcut");
+});
+onEvent("button7", "click", function( ) {
+	console.log("button7 clicked!");
+	setScreen("Freshcut");
+});
+onEvent("button10", "click", function( ) {
+	console.log("Button10 clicked!");
+	setScreen("Salty");
+});
+onEvent("button11", "click", function( ) {
+	console.log("button11 clicked!");
+	setScreen("Salty");
+});
+//basic page functions
+onEvent("Arapaima", "mouseover", function( ) {
+  setSize("Arapaima", 275, 120);
+  
+	console.log("Arapaima hovered!");
+});
+onEvent("Arapaima", "mouseout", function( ) {
+  setSize("Arapaima", 250, 100);
+  
+	console.log("Arapaima hovered!");
+});
+onEvent("Arapaima", "click", function( ){
+  setScreen("Arapaima_Screen");
+  console.log("Arapaima clicked!"); 
+  playSound("Pop-Bubble-SFX.mp3");
+});
+//end of arapaima
+onEvent("Largemouth_Bass", "mouseover", function( ) {
+  setSize("Largemouth_Bass", 175, 100);
+  
+	console.log("Largemouth_Bass hovered!");
+});
+onEvent("Largemouth_Bass", "mouseout", function( ) {
+  setSize("Largemouth_Bass", 150, 75);
+  
+	console.log("Largemouth_Bass hovered!");
+});
+onEvent("Largemouth_Bass", "click", function( ){
+  setScreen("Largemouth_Bass_Screen");
+  playSound("Pop-Bubble-SFX.mp3");
+  console.log("Largemouth_Bass clicked!"); 
+});
+//end of bass
+
+//end of freshwater fish functions
+onEvent("Clownfish", "mouseover", function( ) {
+  setSize("Clownfish", 225, 125);
+  
+	console.log("Clownfish hovered!");
+});
+onEvent("Clownfish", "mouseout", function( ) {
+  setSize("Clownfish", 200, 100);
+  
+	console.log("Clownfish hovered!");
+});
+onEvent("Clownfish", "click", function( ){
+  playSound("Pop-Bubble-SFX.mp3");
+  setScreen("Clownfish_Screen");
+  console.log("Clownfish clicked!"); 
+});
+onEvent("Powder_Blue_Tang", "mouseover", function( ) {
+  setSize("Powder_Blue_Tang", 225, 125);
+  
+	console.log("Powder_Blue_Tang hovered!");
+});
+onEvent("Powder_Blue_Tang", "mouseout", function( ) {
+  setSize("Powder_Blue_Tang", 200, 100);
+  
+	console.log("Powder_Blue_Tang hovered!");
+});
+onEvent("Powder_Blue_Tang", "click", function( ){
+  playSound("Pop-Bubble-SFX.mp3");
+  setScreen("Powder_Blue_Tang_Screen");
+  console.log("Powder_Blue_Tang clicked!"); 
+});
