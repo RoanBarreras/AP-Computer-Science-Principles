@@ -1,0 +1,107 @@
+var coin = ["one", "two"];
+(coin[0]) = 0;
+(coin[1]) = 0;
+
+//takes total number of times landed on heads or tails and updates the value on screen.
+function updateScreen(){
+  setText("totalOnes", (coin[0]));
+  setText("totalTwos", (coin[1]));
+}
+
+function coinFlip(){
+  var totalFlips = getNumber("flipNum");
+
+  for (var j = 0; j < totalFlips; j++) {
+    var flip = randomNumber(0, 1);
+    if(flip == 0){
+      (coin[0])++;
+      }else {
+       (coin[1])++;
+    }
+  }
+}
+
+function calculate(symbol){
+  var number1 = getNumber("inputNumber1");
+  var number2 = getNumber("inputNumber2");
+  var answer;
+  
+  if(symbol == " + "){
+    answer = number1 + number2;
+  } else if (symbol == " - "){
+    answer = number1 - number2;
+  } else if ((symbol == " / ")) {
+    answer = number1 / number2;
+  } else if ((symbol == " x² ")) {
+    answer = number1 * number1;
+  } else if ((symbol == " y² ")) {
+    answer = number2 * number2;
+  } else if ((symbol == " √x ")) {
+    answer = Math.sqrt(number1);
+  } else if ((symbol == " √y ")) {
+    answer = Math.sqrt(number2);
+  } else {
+    answer = number1 * number2;
+  }
+  
+  // the MOD operator "%" - divides two numbers and returns the remainder
+  // in this case - if a number divide by two has a remainder of zero, it's an even number
+  if(answer%2==0){
+    setText("evenOddLabel", "The answer is an EVEN number.");
+  } else {
+    setText("evenOddLabel", "The answer is an ODD number");
+  }
+  
+  // answer is now set to a string of the math problem written out
+  answer = number1 + " " + symbol + " " + number2 + " = " + answer;
+  
+  setText("inputNumber1", "");
+  setText("inputNumber2", "");
+  return answer;
+}
+
+onEvent("addButton", "click", function(){
+  setText("outputLabel", calculate(" + "));
+});
+
+onEvent("minusButton", "click", function(){
+  setText("outputLabel", calculate(" - "));
+});
+
+onEvent("multiplyButton", "click", function(){
+  setText("outputLabel", calculate(" * "));
+});
+
+onEvent("divideButton", "click", function(){
+  setText("outputLabel", calculate (" / "));
+});
+
+onEvent("sqrtButton1", "click", function(){
+  setText("outputLabel", calculate(" √x "));
+});
+
+onEvent("sqrtButton2", "click", function(){
+  setText("outputLabel", calculate(" √y " ));
+});
+
+onEvent("squareButton1", "click", function(){
+  setText("outputLabel", calculate(" x² "));
+});
+
+onEvent("squareButton2", "click", function(){
+  setText("outputLabel", calculate(" y² "));
+});
+
+onEvent("dice", "click", function() {
+  coinFlip();
+ updateScreen();
+});
+
+onEvent("button2", "click", function(){
+  setScreen("screen2");
+  updateScreen();
+});
+onEvent("button3", "click", function(){
+  setScreen("screen1");
+  updateScreen();
+});
